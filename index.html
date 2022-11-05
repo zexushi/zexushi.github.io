@@ -77,6 +77,39 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-HNOI2008玩具装箱（lg P3195）题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/05/HNOI2008%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1%EF%BC%88lg%20P3195%EF%BC%89%E9%A2%98%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2022-11-05T06:59:17.513Z" itemprop="datePublished">2022-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>let $f_i&#x3D;pref_i+i$ ($f$ 数组严格递增)</p>
+<p>let $g_i&#x3D;pref_i+i$ ($g$ 数组严格递增)<br>$$<br>\begin{aligned}<br>dp_i&amp;&#x3D;\min(dp_j+((pref_i-pref_j+i-j-1)-L)^2)\<br>&amp;&#x3D;\min(dp_j+(((pref_i+i)-(pref_j+j)-1)-L)^2)\<br>&amp;&#x3D;\min(dp_j+(f_i-f_j-1-L)^2)\<br>&amp;&#x3D;\min(dp_j+(f_i-g_j)^2)\<br>&amp;&#x3D;\min(dp_j+f_i^2+g_j^2-2f_ig_j)<br>\end{aligned}<br>$$<br>所以<br>$$<br>2f_ig_j+dp_i-f_i^2&#x3D;dp_j+g_j^2<br>$$<br>那么 $dp_i$ 转化为一条斜率为 $2f_i$ 并且过 $(g_j,dp_j+g_j)$ 的直线的截距加上 $f_i^2$</p>
+<p>由于 $f_i^2$ 确定，那么只要求这个截距的最小值就行了</p>
+<p>由图像知只有最外层的下凸包上的点可能是最佳的，而这个凸包上的点中，从左到右第一个满足当前点和凸包上下一个点的斜率大于 $2f_i$ 的点是最佳的</p>
+<p>直接用单调队列维护就可以了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zexushi.github.io/2022/11/05/HNOI2008%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1%EF%BC%88lg%20P3195%EF%BC%89%E9%A2%98%E8%A7%A3/" data-id="cla3kv6qj0001akul18mahi3h" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-第三期" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/23/%E7%AC%AC%E4%B8%89%E6%9C%9F/" class="article-date">
@@ -104,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zexushi.github.io/2022/10/23/%E7%AC%AC%E4%B8%89%E6%9C%9F/" data-id="cl9ldzlla0002hkulg6jufesb" data-title="社会奋进报第三期" class="article-share-link">Share</a>
+      <a data-url="http://zexushi.github.io/2022/10/23/%E7%AC%AC%E4%B8%89%E6%9C%9F/" data-id="cla3kv6qm0003akuleyuy7zr7" data-title="社会奋进报第三期" class="article-share-link">Share</a>
       
       
       
@@ -143,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zexushi.github.io/2022/10/23/NewsPapers/" data-id="cl9ldzlkw0000hkul9dv803tf" data-title="NewsPapers" class="article-share-link">Share</a>
+      <a data-url="http://zexushi.github.io/2022/10/23/NewsPapers/" data-id="cla3kv6mm0000akul62qwceq5" data-title="NewsPapers" class="article-share-link">Share</a>
       
       
       
@@ -194,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zexushi.github.io/2022/10/23/hello-world/" data-id="cl9ldzll30001hkul4ain0n7i" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://zexushi.github.io/2022/10/23/hello-world/" data-id="cla3kv6ql0002akul0thteq4q" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -224,7 +257,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
     </div>
   </div>
 
@@ -235,6 +268,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/05/HNOI2008%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1%EF%BC%88lg%20P3195%EF%BC%89%E9%A2%98%E8%A7%A3/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2022/10/23/%E7%AC%AC%E4%B8%89%E6%9C%9F/">社会奋进报第三期</a>
